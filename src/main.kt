@@ -1,15 +1,18 @@
 import kotlin.math.max
+import kotlin.reflect.jvm.internal.impl.resolve.sam.SamConversionResolverImpl
 
 fun main(){
-greetings("moon",4)
+var stmt = greetings("moon",4)
+    println(stmt)
     name()
-    place()
+    var chars = place("blue")
+    println(chars)
     sent()
 }
-fun greetings(name:String, age: Int){
+fun greetings(name:String, age: Int):String{
 
     var stmt = "hi,my name is $name and i am $age years old"
-    println(stmt)
+    return stmt
 
 
 }
@@ -21,9 +24,9 @@ fun name(){
 
 
 }
-fun place(){
-    var x = "country"
-    println("country".length)
+fun place(colors: String): Int{
+    var chars= colors.length
+    return chars
 }
 fun sent(){
     var name = "Atta"
